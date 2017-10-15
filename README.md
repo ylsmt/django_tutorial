@@ -43,3 +43,26 @@ polls:
 ├── urls.py
 └── views.py
 ```
+* [URL配置](#URL配置)
+    * mysite/settings.py:
+        * ```url(r'^polls/', include('polls.urls')),```
+    * polls/urls.py:
+        * ```url(r'^$', views.index, name='index'),```
+        *  设置命名空间:
+            ```app_name = 'polls'```
+* [视图](#视图)
+    * polls/views.py
+    * 通用视图:
+* [模型](#模型)
+* [安装问题](#问题)
+  - 找不到virtualenv 命令
+     ``` 
+     /usr/local/python3/bin/virtualenv django 
+     ```
+  * sqlite导入错误   安装sqlite3后重新编译
+      ```
+      yum install sqlite-devel -y
+      cd Python-3.5.0
+      ./configure --prefix=/usr/local/python3
+      make && make install
+      ```
